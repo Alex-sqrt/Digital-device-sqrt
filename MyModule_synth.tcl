@@ -1,5 +1,5 @@
 ## Setup technology files
-include ../Scripts/X-FAB_typ.tcl
+include ../Source/X-FAB_typ.tcl
 ##include X-FAB_typ.tcl
 ## Setup variables
 set DESIGN Sqrt2
