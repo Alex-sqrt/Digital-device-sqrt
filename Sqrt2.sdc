@@ -4,7 +4,7 @@
 #
 
 set FCLK  20;                  #desired Fclk
-set UNCERT 10;                      #desired % from Fclk for clock uncertainty
+set UNCERT 6;                      #desired % from Fclk for clock uncertainty
 
 ############GROUP PATH and PORTS for STA################
 group_path -name REGIN  -through [all_inputs]
