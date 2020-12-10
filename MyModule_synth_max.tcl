@@ -1,5 +1,5 @@
 ## Setup technology files
-include ../Scripts/X-FAB_max.tcl
+include ../Source/X-FAB_max.tcl
 ##include X-FAB_max.tcl
 ## Setup variables
 set DESIGN Sqrt2
