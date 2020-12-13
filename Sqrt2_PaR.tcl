@@ -28,9 +28,9 @@ set init_design_settop 0
 set init_gnd_net VSS
 set init_io_file ../Source/Module_pins
 set init_lef_file {/Cadence/Libs/X_FAB/XKIT/xt018/cadence/v5_0/techLEF/v5_0_2/xt018_xx43_MET4_METMID_METTHK.lef /Cadence/Libs/X_FAB/XKIT/xt018/diglibs/D_CELLS_HD/v4_0/LEF/v4_0_0/xt018_D_CELLS_HD.lef}
-set init_mmmc_file ../Scripts/MMMC.tcl
+set init_mmmc_file ../Source/MMMC.tcl
 set init_pwr_net VDD
-set init_verilog ../Outputs/Sqrt2_synth.v
+set init_verilog ../Source/Synthesis/Sqrt2_synth.v
 set lsgOCPGainMult 1.000000
 set pegDefaultResScaleFactor 1.000000
 set pegDetailResScaleFactor 1.000000
@@ -152,11 +152,11 @@ timeDesign -signoff -hold -pathReports -slackReports -numPaths 50 -prefix Sqrt2_
 all_hold_analysis_views 
 all_setup_analysis_views 
 ########################## Экспорт выходных файлов ###############################
-write_sdf ../Outputs_F20_U6_new/Sqrt2.sdf
-saveNetlist ../Outputs_F20_U6_new/Sqrt2_netlist.v
-saveNetlist ../Outputs_F20_U6_new/Sqrt2_phys.v -includePhysicalCell {FEED7HD FEED5HD FEED3HD FEED2HD FEED25HD FEED1HD FEED15HD FEED10HD DECAP7HD DECAP5HD DECAP3HD DECAP25HD DECAP15HD DECAP10HD}
+write_sdf ../Outputs/Sqrt2.sdf
+saveNetlist ../Outputs/Sqrt2_netlist.v
+saveNetlist ../Outputs/Sqrt2_phys.v -includePhysicalCell {FEED7HD FEED5HD FEED3HD FEED2HD FEED25HD FEED1HD FEED15HD FEED10HD DECAP7HD DECAP5HD DECAP3HD DECAP25HD DECAP15HD DECAP10HD}
 global dbgLefDefOutVersion
 set dbgLefDefOutVersion 5.8
-defOut -floorplan -netlist -routing ../Outputs_F20_U6_new/Sqrt2.def
+defOut -floorplan -netlist -routing ../Outputs/Sqrt2.def
 set dbgLefDefOutVersion 5.8
 
