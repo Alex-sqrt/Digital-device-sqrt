@@ -125,12 +125,12 @@ timeDesign -signoff -hold -pathReports -slackReports -numPaths 50 -prefix Sqrt2_
 all_hold_analysis_views 
 all_setup_analysis_views
 ########################## Экспорт выходных файлов ############################### 
-write_sdf ../Outputs_F21_U5/Sqrt2.sdf
-saveNetlist ../Outputs_F21_U5/Sqrt2_netlist.v
-saveNetlist ../Outputs_F21_U5/Sqrt2_phys.v -includePhysicalCell {FEED7HD FEED5HD FEED3HD FEED2HD FEED25HD FEED1HD FEED15HD FEED10HD DECAP7HD DECAP5HD DECAP3HD DECAP25HD DECAP15HD DECAP10HD}
+write_sdf ../Outputs/Sqrt2.sdf
+saveNetlist ../Outputs/Sqrt2_netlist.v
+saveNetlist ../Outputs/Sqrt2_phys.v -includePhysicalCell {FEED7HD FEED5HD FEED3HD FEED2HD FEED25HD FEED1HD FEED15HD FEED10HD DECAP7HD DECAP5HD DECAP3HD DECAP25HD DECAP15HD DECAP10HD}
 global dbgLefDefOutVersion
 set dbgLefDefOutVersion 5.8
-defOut -floorplan -netlist -routing ../Outputs_F21_U5/Sqrt2.def
+defOut -floorplan -netlist -routing ../Outputs/Sqrt2.def
 set dbgLefDefOutVersion 5.8
 saveDesign Sqrt2_F21_U5.enc
 
