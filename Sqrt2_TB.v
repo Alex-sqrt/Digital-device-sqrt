@@ -27,10 +27,15 @@ module Sqrt2_TB;
 	// Inputs
 	reg [14:0] In;
         reg clk;
+	reg clk1;
+	reg [14:0] out_ref1 = 0;
+	reg [14:0] out_ref2 = 0;
+	reg [14:0] out_ref = 0;
         reg reset;
 	// Outputs
 	wire [14:0] Out;
-	integer fd, temp;
+        integer fd, temp;
+	integer fd1, temp1;
       
 
 	// Instantiate the Unit Under Test (UUT)
@@ -40,22 +45,31 @@ module Sqrt2_TB;
 	.clk(clk),.reset(reset));
 
 	initial begin
+	clk1 = 1'b0;
 	clk = 1'b0;
 	reset = 1'b0;
-	fd = $fopen("In.dat", "r"); //необходимо указать путь к файлу In. Если Incicive //запускается из папки Sourse, то ничего менять не надо 
+	fd = $fopen("../Source/In.dat", "r");
 		//#33 reset=1'b0;
+	fd1 = $fopen("../Source/Out_expected.dat", "r");
+	In = 15'b0;
 	end
 
-	always @(posedge clk)
+	always @(posedge clk1)
 	begin
 	if (!$feof(fd))
 		temp = $fscanf(fd, "%h", In);
-		//$display ("%h, Out);
+		temp1 = $fscanf(fd1, "%h", out_ref1);
+	end
+	always @(posedge clk)
+	begin
+	out_ref2 <= out_ref1;
+	out_ref <= out_ref2;
 	end
 
-	always 
-	#5 clk =~clk;
-
-  
+	always begin
+	#5 clk1 =~clk1;
+	#2 clk = ~clk;
+	end
+      
 endmodule
 
