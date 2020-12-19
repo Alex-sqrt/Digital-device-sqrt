@@ -1,5 +1,5 @@
 ## Timing constraints file from the synthesis
-create_constraint_mode -name CONSTRAINTS -sdc_files {../Source/Sqrt2.sdc}
+create_constraint_mode -name CONSTRAINTS -sdc_files {../Source/Sqrt2_layout.sdc}
 ## Create timing library sets
 # The slowest corner
 create_library_set -name SLOWlib \
