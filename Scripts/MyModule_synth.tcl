@@ -20,8 +20,8 @@ synthesize -incremental
 report area > ../Reports/Sqrt2_synth_area_report
 report timing > ../Reports/Sqrt2_synth_timing_report
 ## Write out synthesized Verilog netlist
-write_hdl -mapped > ../Source/Synthesis/Sqrt2_synth.v
+write_hdl -mapped > ../Outputs/Sqrt2_synth.v
 ## Write out the SDC file we will take into the place n route tool
-write_sdc > ../Source/Synthesis/Sqrt2_out.sdc
+write_sdc > ../Outputs/Sqrt2_out.sdc
 gui_show
 
